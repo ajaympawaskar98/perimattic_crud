@@ -7,6 +7,7 @@ const { validateAddUser , validateGetUserById , validateUpdateUserById ,validate
 
 router.post('/addUser',validateAddUser ,userController.addUsers);
 router.get('/getUserById',validateGetUserById ,userController.getUserById);
+router.get('/getAllUsers',userController.viewAllUser);
 router.put('/updateUserById',validateUpdateUserById ,userController.updateUserById);
 router.delete('/deleteUserById',validateDeleteUserById , userController.deleteUserById);
 

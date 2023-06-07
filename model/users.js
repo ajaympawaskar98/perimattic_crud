@@ -35,7 +35,7 @@ Users.getUserById = (userid) => {
 
   Users.fetchAll = () => {
     return new Promise((resolve, reject) => {
-      let sql = `SELECT * FROM users '`;
+      let sql = `SELECT * FROM users`;
       db.query(sql, (err, res) => {
         if (err) {
           return reject(err);
@@ -60,7 +60,7 @@ Users.getUserById = (userid) => {
 
   Users.delete = (userid) => {
     return new Promise((resolve, reject) => {
-      let sql = `DELETE * from users WHERE id = '${userid}'`;
+      let sql = `DELETE from users WHERE id = '${userid}'`;
       db.query(sql, (err, res) => {
         if (err) {
           return reject(err);

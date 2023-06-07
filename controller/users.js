@@ -125,13 +125,13 @@ exports.viewAllUser = async (req, res, next) => {
     try {
       let result = await Users.delete(userid);
       {
-        if (!result.length) {
-          return res.status(200).json({ status: 200, error: null, response: result,message:"No Record Found" });
+        if (!result.affectedRows) {
+          return res.status(400).json({ status: 400, error: null,message:"No Record Found" });
         }
   
         return res.status(200).json({
           status: 200,
-          response: result,
+          message:"User Deleted Successfully"
         });
       }
     } catch (e) {
